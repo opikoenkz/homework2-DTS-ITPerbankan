@@ -14,11 +14,11 @@
   --light: #f8f9fa;
   --dark: #343a40;
   /*========== Font and typography ==========*/
+  --semi-big-font-size: 2rem;
+  --big-font-size: 3rem;
   --normal-font-size: 1rem;
   --small-font-size: 0.75rem;
   --medium-font-size: 0.938rem;
-  --semi-big-font-size: 2.2rem;
-  --big-font-size: 3.4rem;
   /*========== Font weight ==========*/
   --font-semi-medium: 400;
   --font-medium: 500;
@@ -29,6 +29,11 @@
 /*================== General =================*/
 body {
   background-color: #2a2e33;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100vh;
 }
 
 /*----- Section -----*/
@@ -43,11 +48,19 @@ section {
   color: var(--light);
 }
 
+img#photo-me {
+  margin-top: 1.75rem;
+}
+
 .title-name,
 .title-work {
   font-weight: var(--font-large);
   font-size: var(--big-font-size);
   color: var(--teal);
+}
+
+p.h6.lh-base {
+  text-align: justify;
 }
 
 .line-horizon {
@@ -110,19 +123,20 @@ section {
 .card .card-body .text-muted {
   color: #c9c760 !important;
 }
+
+small.text-muted {
+  margin-left: 1rem;
+}
 /*================== Card =================*/
 .card {
   background-color: var(--gray-dark);
 }
-
 .card .shadow-lg {
   box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
-
 .card-body {
   background: linear-gradient(-45deg, rgba(0, 0, 0, 0.4), rgba(255, 255, 245, 0.25));
 }
-
 .element-3 {
   box-shadow: -8px -8px 12px 0 rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(122, 122, 122, 0.2);
 }
@@ -163,7 +177,7 @@ section {
   color: var(--teal);
 }
 
-/*----- Icons Socmed -----*/
+/*----- Icons Sosmed -----*/
 .contact-links {
   display: flex;
   flex-wrap: wrap;
@@ -208,23 +222,91 @@ section {
 }
 
 /*================== Media Query =================*/
-@media screen and (min-width: 768px) and (max-width: 968px) {
+@media screen and (min-width: 781px) and (max-width: 1030px) {
   section {
-    padding: 0.8rem 1.5rem;
-    margin: 0.5rem 1rem;
+    padding: 1rem 2.25rem;
+    margin: 0.5rem 1.25rem;
   }
   .jumbotron {
     padding: 1.5rem 1rem;
   }
+
+  img#photo-me {
+    margin-top: 5rem;
+  }
+  .title-name,
+  .title-work {
+    text-align: center;
+  }
+
+  p.h6.lh-base {
+    text-align: justify;
+  }
 }
 
-@media screen and (min-width: 420px) and (max-width: 767px) {
+@media screen and (min-width: 570px) and (max-width: 780px) {
   section {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     margin: 0.5rem 0.8rem;
   }
 
   .jumbotron {
-    padding: 0.5rem 0.8rem;
+    padding: 1rem 1rem;
+  }
+
+  img#photo-me {
+    margin-top: 5rem;
+  }
+
+  .title-name,
+  .title-work {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+
+  p.h6.lh-base {
+    text-align: center;
+  }
+
+  .btn.btn-secondary.rounded-pill {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 570px) {
+  section {
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem 0.75rem;
+  }
+
+  .jumbotron {
+    padding: 0.75rem 0.75rem;
+  }
+
+  .title-name,
+  .title-work {
+    font-size: var(--semi-big-font-size);
+    text-align: center;
+  }
+
+  p.h6.lh-base {
+    text-align: center;
+  }
+
+  #contact {
+    margin: 0 1.5rem;
+  }
+
+  .title-project {
+    padding: auto;
+    margin: 1rem;
+  }
+
+  .btn.btn-secondary.rounded-pill {
+    width: 30%;
+  }
+
+  small.text-muted {
+    font-size: var(--medium-font-size);
   }
 }
